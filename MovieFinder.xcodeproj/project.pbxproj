@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		884B384E1A82B12C00347AD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B384D1A82B12C00347AD9 /* main.m */; };
 		884B38511A82B12C00347AD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B38501A82B12C00347AD9 /* AppDelegate.m */; };
-		884B38541A82B12C00347AD9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B38531A82B12C00347AD9 /* ViewController.m */; };
+		884B38541A82B12C00347AD9 /* SearchMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B38531A82B12C00347AD9 /* SearchMovieViewController.m */; };
 		884B38571A82B12C00347AD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884B38551A82B12C00347AD9 /* Main.storyboard */; };
 		884B38591A82B12C00347AD9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 884B38581A82B12C00347AD9 /* Images.xcassets */; };
 		884B385C1A82B12C00347AD9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 884B385A1A82B12C00347AD9 /* LaunchScreen.xib */; };
 		884B38681A82B12C00347AD9 /* MovieFinderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B38671A82B12C00347AD9 /* MovieFinderTests.m */; };
+		884B38731A82B8B300347AD9 /* MovieResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B38721A82B8B300347AD9 /* MovieResultsTableViewController.m */; };
+		884B38761A82E18B00347AD9 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B38751A82E18B00347AD9 /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		884B384D1A82B12C00347AD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		884B384F1A82B12C00347AD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		884B38501A82B12C00347AD9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		884B38521A82B12C00347AD9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		884B38531A82B12C00347AD9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		884B38521A82B12C00347AD9 /* SearchMovieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchMovieViewController.h; sourceTree = "<group>"; };
+		884B38531A82B12C00347AD9 /* SearchMovieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchMovieViewController.m; sourceTree = "<group>"; };
 		884B38561A82B12C00347AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		884B38581A82B12C00347AD9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		884B385B1A82B12C00347AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		884B38611A82B12C00347AD9 /* MovieFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		884B38661A82B12C00347AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		884B38671A82B12C00347AD9 /* MovieFinderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieFinderTests.m; sourceTree = "<group>"; };
+		884B38711A82B8B300347AD9 /* MovieResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieResultsTableViewController.h; sourceTree = "<group>"; };
+		884B38721A82B8B300347AD9 /* MovieResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieResultsTableViewController.m; sourceTree = "<group>"; };
+		884B38741A82E18B00347AD9 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		884B38751A82E18B00347AD9 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +87,8 @@
 		884B384A1A82B12C00347AD9 /* MovieFinder */ = {
 			isa = PBXGroup;
 			children = (
-				884B384F1A82B12C00347AD9 /* AppDelegate.h */,
-				884B38501A82B12C00347AD9 /* AppDelegate.m */,
-				884B38521A82B12C00347AD9 /* ViewController.h */,
-				884B38531A82B12C00347AD9 /* ViewController.m */,
+				884B38771A82E19100347AD9 /* Model */,
+				884B38781A82E1AD00347AD9 /* Controllers */,
 				884B38551A82B12C00347AD9 /* Main.storyboard */,
 				884B38581A82B12C00347AD9 /* Images.xcassets */,
 				884B385A1A82B12C00347AD9 /* LaunchScreen.xib */,
@@ -96,6 +100,8 @@
 		884B384B1A82B12C00347AD9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				884B384F1A82B12C00347AD9 /* AppDelegate.h */,
+				884B38501A82B12C00347AD9 /* AppDelegate.m */,
 				884B384C1A82B12C00347AD9 /* Info.plist */,
 				884B384D1A82B12C00347AD9 /* main.m */,
 			);
@@ -117,6 +123,26 @@
 				884B38661A82B12C00347AD9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		884B38771A82E19100347AD9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				884B38741A82E18B00347AD9 /* Movie.h */,
+				884B38751A82E18B00347AD9 /* Movie.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		884B38781A82E1AD00347AD9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				884B38521A82B12C00347AD9 /* SearchMovieViewController.h */,
+				884B38531A82B12C00347AD9 /* SearchMovieViewController.m */,
+				884B38711A82B8B300347AD9 /* MovieResultsTableViewController.h */,
+				884B38721A82B8B300347AD9 /* MovieResultsTableViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				884B38541A82B12C00347AD9 /* ViewController.m in Sources */,
+				884B38541A82B12C00347AD9 /* SearchMovieViewController.m in Sources */,
 				884B38511A82B12C00347AD9 /* AppDelegate.m in Sources */,
+				884B38761A82E18B00347AD9 /* Movie.m in Sources */,
 				884B384E1A82B12C00347AD9 /* main.m in Sources */,
+				884B38731A82B8B300347AD9 /* MovieResultsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
