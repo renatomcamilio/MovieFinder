@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MovieTableViewCell.h"
+#import "OMDbAPI.h"
 #import "Movie.h"
 
 @interface MovieResultsTableViewController : UITableViewController <NSURLSessionDataDelegate>

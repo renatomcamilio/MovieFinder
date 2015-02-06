@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OMDbAPI.h"
 
 @interface SearchMovieViewController : UIViewController
 

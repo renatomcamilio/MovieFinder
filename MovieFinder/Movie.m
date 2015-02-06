@@ -10,19 +10,24 @@
 
 @interface Movie ()
 
-@property (nonatomic, strong) NSString *title, *synopsis, *genre, *awards, *actors, *director;
-@property (assign) NSInteger year;
-
 @end
 
 @implementation Movie
 
 + (instancetype)movieWithDictionary:(NSDictionary *)movieDictionary {
     Movie *newMovie = [[self alloc] init];
-    
+
+    newMovie.imdbID = [movieDictionary valueForKey:@"imdbID"];
     newMovie.title = [movieDictionary valueForKey:@"Title"];
     newMovie.synopsis = [movieDictionary valueForKey:@"Plot"];
     newMovie.genre = [movieDictionary valueForKey:@"Genre"];
+    newMovie.awards = [movieDictionary valueForKey:@"Awards"];
+    newMovie.actors = [movieDictionary valueForKey:@"Director"];
+    newMovie.releaseDate = [movieDictionary valueForKey:@"Released"];
+    newMovie.year = [[movieDictionary valueForKey:@"Year"] integerValue];
+    newMovie.metaScore = [[movieDictionary valueForKey:@"Metascore"] integerValue];
+    newMovie.imdbVotes = [[movieDictionary valueForKey:@"imdbVotes"] integerValue];
+    newMovie.imdbRating = [[movieDictionary valueForKey:@"imdbRating"] decimalValue];
     
     return newMovie;
 }

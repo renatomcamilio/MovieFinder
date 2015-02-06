@@ -49,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="8eJ-6g-0E4" detailTextLabel="nuI-BG-ZQf" style="IBUITableViewCellStyleSubtitle" id="h3q-7Q-f86">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieTableViewCell" textLabel="8eJ-6g-0E4" detailTextLabel="nuI-BG-ZQf" style="IBUITableViewCellStyleSubtitle" id="h3q-7Q-f86" customClass="MovieTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h3q-7Q-f86" id="0lC-Ue-P0g">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -69,7 +69,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Kti-xK-1XH" kind="showDetail" id="QrO-69-jy7"/>
+                                    <segue destination="Kti-xK-1XH" kind="show" identifier="showMovieDetail" id="lsx-ff-oU7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="1920" y="1103"/>
         </scene>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="14a-Yf-YYL">
             <objects>
-                <viewController id="Kti-xK-1XH" sceneMemberID="viewController">
+                <viewController id="Kti-xK-1XH" customClass="MovieDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Ki-VU-KfT"/>
                         <viewControllerLayoutGuide type="bottom" id="bBl-7I-QYB"/>
@@ -101,8 +101,72 @@
                     <view key="view" contentMode="scaleToFill" id="x1t-tV-F9l">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9v-QW-AHx">
+                                <rect key="frame" x="16" y="72" width="568" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date: Nov 2014" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8Y-Rt-DPF">
+                                <rect key="frame" x="16" y="115" width="568" height="20.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actors: Dummy, Funny, Bazz, Foo" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqu-LJ-1tL">
+                                <rect key="frame" x="224" y="173" width="360" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director: Renato Camilio" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqd-kB-Ud2">
+                                <rect key="frame" x="224" y="144" width="360" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lON-6D-Ouh">
+                                <rect key="frame" x="16" y="380" width="568" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="w0d-wS-uSd"/>
+                                </constraints>
+                            </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSZ-ix-gOM">
+                                <rect key="frame" x="16" y="144" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Bl4-5L-PjP"/>
+                                    <constraint firstAttribute="height" constant="200" id="JWC-Hl-1gS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lON-6D-Ouh" secondAttribute="trailing" id="4Db-Tj-rCH"/>
+                            <constraint firstItem="zqu-LJ-1tL" firstAttribute="top" secondItem="Oqd-kB-Ud2" secondAttribute="bottom" constant="9.5" id="62q-O7-UGt"/>
+                            <constraint firstItem="J8Y-Rt-DPF" firstAttribute="leading" secondItem="x1t-tV-F9l" secondAttribute="leadingMargin" id="Erk-j1-fET"/>
+                            <constraint firstItem="v9v-QW-AHx" firstAttribute="trailing" secondItem="x1t-tV-F9l" secondAttribute="trailingMargin" id="FnA-4V-0hb"/>
+                            <constraint firstItem="ZSZ-ix-gOM" firstAttribute="leading" secondItem="x1t-tV-F9l" secondAttribute="leadingMargin" id="Hom-0H-8wC"/>
+                            <constraint firstItem="v9v-QW-AHx" firstAttribute="leading" secondItem="x1t-tV-F9l" secondAttribute="leadingMargin" id="OoN-X9-zjN"/>
+                            <constraint firstItem="v9v-QW-AHx" firstAttribute="top" secondItem="9Ki-VU-KfT" secondAttribute="bottom" constant="8" id="Qtm-Hw-Tjc"/>
+                            <constraint firstItem="zqu-LJ-1tL" firstAttribute="trailing" secondItem="x1t-tV-F9l" secondAttribute="trailingMargin" id="URA-h8-eon"/>
+                            <constraint firstItem="Oqd-kB-Ud2" firstAttribute="top" secondItem="J8Y-Rt-DPF" secondAttribute="bottom" constant="8.5" id="a5k-S3-HXJ"/>
+                            <constraint firstItem="J8Y-Rt-DPF" firstAttribute="trailing" secondItem="x1t-tV-F9l" secondAttribute="trailingMargin" id="bsk-LU-XkO"/>
+                            <constraint firstItem="Oqd-kB-Ud2" firstAttribute="trailing" secondItem="x1t-tV-F9l" secondAttribute="trailingMargin" id="cMA-7J-d9Z"/>
+                            <constraint firstItem="lON-6D-Ouh" firstAttribute="leading" secondItem="x1t-tV-F9l" secondAttribute="leadingMargin" id="f2R-d7-6wo"/>
+                            <constraint firstItem="J8Y-Rt-DPF" firstAttribute="top" secondItem="v9v-QW-AHx" secondAttribute="bottom" constant="16.5" id="fjN-9P-z1L"/>
+                            <constraint firstItem="bBl-7I-QYB" firstAttribute="top" secondItem="lON-6D-Ouh" secondAttribute="bottom" constant="20" id="i3S-yQ-lHH"/>
+                            <constraint firstItem="ZSZ-ix-gOM" firstAttribute="top" secondItem="J8Y-Rt-DPF" secondAttribute="bottom" constant="8.5" id="ijb-v7-fDe"/>
+                            <constraint firstItem="zqu-LJ-1tL" firstAttribute="leading" secondItem="ZSZ-ix-gOM" secondAttribute="trailing" constant="8" id="ltR-CH-uWw"/>
+                            <constraint firstItem="Oqd-kB-Ud2" firstAttribute="leading" secondItem="ZSZ-ix-gOM" secondAttribute="trailing" constant="8" id="oyt-c2-cvM"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="ekI-Uo-E5u">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="0hO-bU-jhq"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="countryMapView" destination="lON-6D-Ouh" id="xiM-jx-j7l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSV-9P-z24" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

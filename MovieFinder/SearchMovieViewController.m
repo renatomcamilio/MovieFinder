@@ -40,7 +40,9 @@
             destinationViewController = segue.destinationViewController;
         }
         
-        [self searchMovies:(MovieResultsTableViewController *)destinationViewController];
+        [OMDbAPI requestWithOMDbAPIRequestType:OMDbAPIRequestTypeSearch
+                               andRequestParam:self.searchMovieField.text
+                                   andDelegate:(MovieResultsTableViewController *)destinationViewController];
     }
 }
 
@@ -52,21 +54,6 @@
     [self performSegueWithIdentifier:@"showMovieResults" sender:self];
     
     return NO;
-}
-
-#pragma mark - API Request
-
-- (void)searchMovies:(id<NSURLSessionDataDelegate>)sessionDataDelegate {
-    NSString *escapedURLString = [[NSString stringWithFormat:@"http://www.omdbapi.com/?s=%@&r=json", self.searchMovieField.text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *omdbURL = [NSURL URLWithString:escapedURLString];
-    NSURLRequest *omdbURLRequest = [NSURLRequest requestWithURL:omdbURL];
-    
-    NSURLSessionConfiguration *sessionConfig = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@"com.renatocamilio.MovieFinder.horse"];
-    
-    NSURLSession *omdbURLSession = [NSURLSession sessionWithConfiguration:sessionConfig
-                                                                 delegate:sessionDataDelegate
-                                                            delegateQueue:[NSOperationQueue mainQueue]];
-    [[omdbURLSession dataTaskWithRequest:omdbURLRequest] resume];
 }
 
 @end

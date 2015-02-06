@@ -27,19 +27,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Background Data Fetching
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MovieTableViewCell *)cell {
+    if ([segue.identifier isEqualToString:@"showMovieDetail"]) {
+        [OMDbAPI requestWithOMDbAPIRequestType:OMDbAPIRequestTypeID
+                               andRequestParam:cell.movie.imdbID
+                                   andDelegate:segue.destinationViewController];
+    }
+}
+
+#pragma mark - Session Data Delegate
 
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
     NSArray *results = [[NSJSONSerialization JSONObjectWithData:data
                                                         options:NSJSONReadingAllowFragments
                                                           error:nil] valueForKey:@"Search"];
+    // I could just pass &type=movie and it would return movies only,
+    // but I want to play with some predicates :D
     NSPredicate *moviesPredicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
         return [[evaluatedObject valueForKey:@"Type"] isEqualToString:@"movie"];
     }];
     
     self.movies = [NSMutableArray arrayWithArray:[results filteredArrayUsingPredicate:moviesPredicate]];
-    
-    NSLog(@"finished loading data: \n%@", self.movies);
     
     [session finishTasksAndInvalidate];
     [self.tableView reloadData];
@@ -61,13 +71,12 @@
     return [self.movies count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+- (MovieTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MovieTableViewCell class]) forIndexPath:indexPath];
     
     // I should create a custom cell class for this guy right here!
     NSDictionary *movieDictionary = [self.movies objectAtIndex:indexPath.row];
-    cell.textLabel.text = [movieDictionary valueForKey:@"Title"];
-    cell.detailTextLabel.text = [movieDictionary valueForKey:@"Year"];
+    cell.movie = [Movie movieWithDictionary:movieDictionary];
     
     return cell;
 }
