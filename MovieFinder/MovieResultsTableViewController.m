@@ -51,7 +51,7 @@
     
     self.movies = [NSMutableArray arrayWithArray:[results filteredArrayUsingPredicate:moviesPredicate]];
     
-    [session finishTasksAndInvalidate];
+    [session invalidateAndCancel];
     [self.tableView reloadData];
 }
 

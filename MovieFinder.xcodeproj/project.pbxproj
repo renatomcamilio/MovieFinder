@@ -19,8 +19,8 @@
 		884B387B1A83F3B800347AD9 /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B387A1A83F3B800347AD9 /* MovieDetailViewController.m */; };
 		884B387E1A84006100347AD9 /* OMDbAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B387D1A84006100347AD9 /* OMDbAPI.m */; };
 		884B38811A8408C700347AD9 /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B38801A8408C700347AD9 /* MovieTableViewCell.m */; };
-		884B38841A84574700347AD9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884B38831A84574700347AD9 /* MapKit.framework */; };
-		884B38861A84574F00347AD9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884B38851A84574F00347AD9 /* CoreLocation.framework */; };
+		884B38871A845B7700347AD9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884B38831A84574700347AD9 /* MapKit.framework */; };
+		884B38881A845B7F00347AD9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884B38851A84574F00347AD9 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				884B38861A84574F00347AD9 /* CoreLocation.framework in Frameworks */,
-				884B38841A84574700347AD9 /* MapKit.framework in Frameworks */,
+				884B38881A845B7F00347AD9 /* CoreLocation.framework in Frameworks */,
+				884B38871A845B7700347AD9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,11 +84,10 @@
 		884B383F1A82B12C00347AD9 = {
 			isa = PBXGroup;
 			children = (
-				884B38851A84574F00347AD9 /* CoreLocation.framework */,
-				884B38831A84574700347AD9 /* MapKit.framework */,
 				884B384A1A82B12C00347AD9 /* MovieFinder */,
 				884B38641A82B12C00347AD9 /* MovieFinderTests */,
 				884B38491A82B12C00347AD9 /* Products */,
+				884B38891A845BA900347AD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +173,15 @@
 				884B38801A8408C700347AD9 /* MovieTableViewCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		884B38891A845BA900347AD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				884B38851A84574F00347AD9 /* CoreLocation.framework */,
+				884B38831A84574700347AD9 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

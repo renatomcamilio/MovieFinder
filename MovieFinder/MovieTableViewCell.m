@@ -23,10 +23,6 @@
 #pragma mark - Getter & Setter
 
 - (void)setMovie:(Movie *)movie {
-//    if (!_movie) {
-//        _movie = [[Movie alloc] init];
-//    }
-    
     _movie = movie;
     self.textLabel.text = _movie.title;
     self.detailTextLabel.text = [NSString stringWithFormat:@"%li", _movie.year];

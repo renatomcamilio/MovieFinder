@@ -22,9 +22,11 @@
     newMovie.synopsis = [movieDictionary valueForKey:@"Plot"];
     newMovie.genre = [movieDictionary valueForKey:@"Genre"];
     newMovie.awards = [movieDictionary valueForKey:@"Awards"];
-    newMovie.actors = [movieDictionary valueForKey:@"Director"];
+    newMovie.actors = [movieDictionary valueForKey:@"Actors"];
+    newMovie.director = [movieDictionary valueForKey:@"Director"];
     newMovie.releaseDate = [movieDictionary valueForKey:@"Released"];
     newMovie.year = [[movieDictionary valueForKey:@"Year"] integerValue];
+    newMovie.posterURL = [NSURL URLWithString:[movieDictionary valueForKey:@"Poster"]];
     newMovie.metaScore = [[movieDictionary valueForKey:@"Metascore"] integerValue];
     newMovie.imdbVotes = [[movieDictionary valueForKey:@"imdbVotes"] integerValue];
     newMovie.imdbRating = [[movieDictionary valueForKey:@"imdbRating"] decimalValue];
