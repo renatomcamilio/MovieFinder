@@ -39,7 +39,7 @@
 
 #pragma mark - Session Data Delegate
 
-- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
+- (void)populateMovieResultsWithData:(NSData *)data andSession:(NSURLSession *)session {
     NSArray *results = [[NSJSONSerialization JSONObjectWithData:data
                                                         options:NSJSONReadingAllowFragments
                                                           error:nil] valueForKey:@"Search"];
@@ -53,6 +53,13 @@
     
     [session invalidateAndCancel];
     [self.tableView reloadData];
+}
+
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
+    #warning May cause retain cycle
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self populateMovieResultsWithData:data andSession:session];
+    });
 }
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {

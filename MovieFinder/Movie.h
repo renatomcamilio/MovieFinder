@@ -10,9 +10,9 @@
 
 @interface Movie : NSObject
 
-@property (nonatomic, strong) NSString *title, *synopsis, *genre, *awards, *actors, *director, *releaseDate, *imdbID;
+@property (nonatomic, strong) NSString *title, *synopsis, *genre, *awards, *actors, *director, *releaseDate, *imdbID, *country;
 @property (assign) NSInteger year, metaScore, imdbVotes;
-@property (assign) NSDecimal imdbRating;
+@property (assign) float imdbRating;
 @property (nonatomic, strong) NSURL *posterURL;
 
 + (instancetype)movieWithDictionary:(NSDictionary *)movieDictionary;

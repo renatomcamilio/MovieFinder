@@ -33,16 +33,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showMovieResults"]) {
-        UIViewController *destinationViewController;
-        if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
-            destinationViewController = [segue.destinationViewController topViewController];
-        } else {
-            destinationViewController = segue.destinationViewController;
-        }
+        MovieResultsTableViewController *destinationViewController = (MovieResultsTableViewController *)[segue.destinationViewController topViewController];
         
         [OMDbAPI requestWithOMDbAPIRequestType:OMDbAPIRequestTypeSearch
                                andRequestParam:self.searchMovieField.text
-                                   andDelegate:(MovieResultsTableViewController *)destinationViewController];
+                                   andDelegate:destinationViewController];
     }
 }
 

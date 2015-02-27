@@ -37,7 +37,7 @@
     
     NSURLSession *omdbURLSession = [NSURLSession sessionWithConfiguration:sessionConfig
                                                                  delegate:sessionDataDelegate
-                                                            delegateQueue:[NSOperationQueue mainQueue]];
+                                                            delegateQueue:nil];
     NSURLSessionDataTask *dataTask = [omdbURLSession dataTaskWithRequest:omdbURLRequest];
     [dataTask resume];
 }

@@ -25,11 +25,12 @@
     newMovie.actors = [movieDictionary valueForKey:@"Actors"];
     newMovie.director = [movieDictionary valueForKey:@"Director"];
     newMovie.releaseDate = [movieDictionary valueForKey:@"Released"];
+    newMovie.country = [movieDictionary valueForKey:@"Country"];
     newMovie.year = [[movieDictionary valueForKey:@"Year"] integerValue];
-    newMovie.posterURL = [NSURL URLWithString:[movieDictionary valueForKey:@"Poster"]];
     newMovie.metaScore = [[movieDictionary valueForKey:@"Metascore"] integerValue];
     newMovie.imdbVotes = [[movieDictionary valueForKey:@"imdbVotes"] integerValue];
-    newMovie.imdbRating = [[movieDictionary valueForKey:@"imdbRating"] decimalValue];
+    newMovie.imdbRating = [[movieDictionary valueForKey:@"imdbRating"] floatValue];
+    newMovie.posterURL = [NSURL URLWithString:[movieDictionary valueForKey:@"Poster"]];
     
     return newMovie;
 }

@@ -21,6 +21,7 @@
 		884B38811A8408C700347AD9 /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B38801A8408C700347AD9 /* MovieTableViewCell.m */; };
 		884B38871A845B7700347AD9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884B38831A84574700347AD9 /* MapKit.framework */; };
 		884B38881A845B7F00347AD9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884B38851A84574F00347AD9 /* CoreLocation.framework */; };
+		884B388C1A85635400347AD9 /* MovieIMDbInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B388B1A85635400347AD9 /* MovieIMDbInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		884B38801A8408C700347AD9 /* MovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
 		884B38831A84574700347AD9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		884B38851A84574F00347AD9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		884B388A1A85635400347AD9 /* MovieIMDbInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieIMDbInfoViewController.h; sourceTree = "<group>"; };
+		884B388B1A85635400347AD9 /* MovieIMDbInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieIMDbInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 				884B38721A82B8B300347AD9 /* MovieResultsTableViewController.m */,
 				884B38791A83F3B800347AD9 /* MovieDetailViewController.h */,
 				884B387A1A83F3B800347AD9 /* MovieDetailViewController.m */,
+				884B388A1A85635400347AD9 /* MovieIMDbInfoViewController.h */,
+				884B388B1A85635400347AD9 /* MovieIMDbInfoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884B388C1A85635400347AD9 /* MovieIMDbInfoViewController.m in Sources */,
 				884B387B1A83F3B800347AD9 /* MovieDetailViewController.m in Sources */,
 				884B387E1A84006100347AD9 /* OMDbAPI.m in Sources */,
 				884B38811A8408C700347AD9 /* MovieTableViewCell.m in Sources */,
